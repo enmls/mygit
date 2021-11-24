@@ -25,3 +25,19 @@ print(out)
 a=[[1,2],[3,[8,7],4],["xas","xaa"]]
 print (sum(a,[]))
 #out[1, 2, 3, [8, 7], 4, 'xas', 'xaa']
+
+
+def yiled_flat(lst):
+	if len(lst) == 0:
+		return []
+
+	for item in lst:
+		if isinstance(item, list):
+			yield from yiled_flat(item)
+		else:
+			yield item
+
+
+if __name__ == '__main__':
+	arr = [1, [2, 3, [4, [5]]], [6, [7]], 8, 9, [10]]
+	print(list(yiled_flat(arr)))
