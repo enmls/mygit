@@ -1,0 +1,13 @@
+1,https://www.python.org/downloads/release/python-379/
+2,XZ compressed source tarball 适合centos
+3.tar -xvf 解压
+4.mkdir /usr/local/python3 
+5.yum install gcc patch libffi-devel python-devel  zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y
+安装依赖
+6.cd Python-3.7.0
+  ./configure --prefix=/usr/local/python3
+  make && make install
+  
+7.建软连接:	
+ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3
+ln -s /usr/local/python3/bin/pip3.7 /usr/bin/pip3
